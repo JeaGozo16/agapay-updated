@@ -2,7 +2,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput, ScrollView,
 import React, { useState, useEffect } from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome'; 
 
-export default function FireEmergency({ navigation, route }) {
+const NaturalHazard = ({ navigation, route }) =>{
   const [reportText, setReportText] = useState('');
   const [capturedPhotos, setCapturedPhotos] = useState([]); 
 
@@ -221,3 +221,4 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
 });
+export default NaturalHazard;

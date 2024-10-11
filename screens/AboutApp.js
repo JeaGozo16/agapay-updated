@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 const { width, height } = Dimensions.get('window');
 
-export default function About({ navigation }) {
+const About = ({ navigation }) => {
   const fadeAnim = useRef(new Animated.Value(0)).current; 
   const scaleAnim = useRef(new Animated.Value(0.9)).current;  
 
@@ -109,3 +109,4 @@ const styles = StyleSheet.create({
     flexGrow: 1,
   },
 });
+export default About;

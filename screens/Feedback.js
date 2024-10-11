@@ -4,7 +4,8 @@ import { MaterialIcons } from '@expo/vector-icons';
 import StarRating from 'react-native-star-rating-widget';
 
 const { width, height } = Dimensions.get('window'); 
-export default function FeedbackComponent({ navigation }) {
+
+const FeedbackComponent = ({ navigation }) => {
   const [rating, setRating] = useState(0);
   const [feedbackText, setFeedbackText] = useState('');
   const [displayWithName, setDisplayWithName] = useState(false); 
@@ -391,3 +392,4 @@ const styles = StyleSheet.create({
   },
 });
 
+export default FeedbackComponent;

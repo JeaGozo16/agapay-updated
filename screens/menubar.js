@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     width: 250,
     transition: 'width 0.3s ease',
   },
-  open: {
+  open: { 
     width: 250,
   },
   closed: {

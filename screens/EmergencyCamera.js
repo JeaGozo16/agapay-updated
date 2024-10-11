@@ -4,7 +4,7 @@ import { Button, StyleSheet, Text, TouchableOpacity, View, Image } from 'react-n
 import Icon from 'react-native-vector-icons/Ionicons';
 import * as MediaLibrary from 'expo-media-library';
 
-export default function EmergencyCamera({ navigation }) {
+const EmergencyCamera = ({ navigation }) => {
     const [facing, setFacing] = useState('back');
     const [flash, setFlash] = useState('off');
     const [permission, requestPermission] = useCameraPermissions();
@@ -174,3 +174,4 @@ const styles = StyleSheet.create({
         marginTop: 5,
     },
 });
+export default EmergencyCamera;

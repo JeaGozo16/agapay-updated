@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 const { width, height } = Dimensions.get('window'); 
 
-const TransactionHistory = ({ navigation }) => {
+const TransactionHistory = ({ }) => {
   const [transactions, setTransactions] = useState([
     {
       id: 1,

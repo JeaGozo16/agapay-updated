@@ -14,6 +14,8 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
+const { width, height } = Dimensions.get('window');
+
 export default function Homepage({ navigation }) {
   const [selectedAlert, setSelectedAlert] = useState(null);
   const [menuVisible, setMenuVisible] = useState(false); 
@@ -220,7 +222,7 @@ export default function Homepage({ navigation }) {
                   <TouchableOpacity style={styles.button} onPress={handleConfirm}>
                     <Text style={styles.buttonText}>YES</Text>
                   </TouchableOpacity>
-                  <TouchableOpacity style={styles.button} onPress={closeModal}>
+                  <TouchableOpacity style ={styles.button} onPress={closeModal}>
                     <Text style={styles.buttonText}>NO</Text>
                   </TouchableOpacity>
                 </View>
@@ -233,7 +235,6 @@ export default function Homepage({ navigation }) {
   );
 }
 
-const { width, height } = Dimensions.get('window');
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -244,7 +245,7 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
     height: '100%',
-    width: 250,
+    width: '50%',
     backgroundColor: '#800000',
     paddingVertical: 20,
     paddingHorizontal: 10,
@@ -294,8 +295,8 @@ const styles = StyleSheet.create({
   headerContainer: {
     backgroundColor: '#8B0000',
     borderBottomLeftRadius: 60,
-    paddingBottom: height * 0.04,
-    paddingTop: height * 0.06,
+    paddingBottom: 50,
+    paddingTop: 50,
     elevation: 5,
     shadowColor: '#000',
     shadowOffset: { width: 2, height: 8 },
@@ -307,7 +308,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
-    paddingHorizontal: width * 0.03,
+    paddingHorizontal: 20
   },
   menuButton: {
     width: 40,

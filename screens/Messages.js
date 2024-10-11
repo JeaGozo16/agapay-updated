@@ -5,7 +5,7 @@ import { FontAwesome } from '@expo/vector-icons';
 const { width, height } = Dimensions.get('window');
 const isSmallDevice = width < 375;
 
-export default function Message() {
+const Message = () => {
   const [messages, setMessages] = useState([]);
   const [inputMessage, setInputMessage] = useState('');
 
@@ -122,3 +122,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 });
+export default Message;

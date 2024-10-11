@@ -5,7 +5,7 @@ import { View, Text, StyleSheet, ScrollView, Image, ImageBackground, TouchableOp
 const { width } = Dimensions.get('window'); //para maging responsive
 const SLIDE_INTERVAL = 3000; 
 
-export default function Welcome({ navigation }) {
+const Welcome = ({ navigation }) => {
     const scrollViewRef = useRef(null);
     const [currentIndex, setCurrentIndex] = useState(0);
     const slides = [
@@ -160,3 +160,4 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
 });
+export default Welcome;

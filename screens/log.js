@@ -3,7 +3,7 @@ import {View, Text, StyleSheet, Image, TextInput, TouchableOpacity, ImageBackgro
 
 const { width, height } = Dimensions.get('window'); 
 
-export default function LoginScreen({ navigation }) {
+const LoginScreen = ({ navigation }) => {
   return (
     <ImageBackground source={require('../assets/agapaybg.jpg')} style={styles.background}>
       <KeyboardAvoidingView 
@@ -116,3 +116,4 @@ const styles = StyleSheet.create({
     marginBottom: height * 0.01, 
   },
 });
+export default LoginScreen;

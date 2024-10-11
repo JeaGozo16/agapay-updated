@@ -38,7 +38,7 @@ const details = [
     },
 ];
 
-export default function Announcement({ navigation }) {
+const Announcement = ({ navigation }) => {
     const [announcements, setAnnouncements] = useState(initialAnnouncements);
     const [searchQuery, setSearchQuery] = useState('');
     const [filteredAnnouncements, setFilteredAnnouncements] = useState(initialAnnouncements);
@@ -360,3 +360,4 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
 });
+export default Announcement;

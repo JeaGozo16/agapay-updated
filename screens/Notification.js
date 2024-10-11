@@ -6,7 +6,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 
 const { width, height } = Dimensions.get('window');
 
-export default function Notification({ navigation }) {
+const Notification = ({ navigation }) => {
   const [alertType, setAlertType] = useState('ringVibrate');
   const [sound, setSound] = useState();
 
@@ -185,3 +185,4 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
 });
+export default Notification;

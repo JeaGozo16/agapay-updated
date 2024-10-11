@@ -8,7 +8,7 @@ const Stack = createNativeStackNavigator();
 const { width, height } = Dimensions.get('window');
 const isSmallDevice = width < 375;
 
-export default function ResponseProgress({navigation}) {
+const ResponseProgress = ({navigation}) => {
   const [progress, setProgress] = useState(0);
   const animatedValue = new Animated.Value(0);
 
@@ -166,3 +166,4 @@ const styles = StyleSheet.create({
     shadowRadius: 2,
   },
 });
+export default ResponseProgress;

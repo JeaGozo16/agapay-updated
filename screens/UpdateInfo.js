@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 const { width, height } = Dimensions.get('window'); 
 
-const UpdateInfo = () => {
+const UpdateInfo = ({}) => {
   const initialState = {
     contactNumber: '09234564039',
     alternativeNumber: '09579712976',
@@ -355,6 +355,5 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 });
-
 
 export default UpdateInfo;
