@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, Dimensions, Animated, Easing, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Dimensions, Animated, Easing, TouchableOpacity, Alert } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 import Svg, { Circle } from 'react-native-svg';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-const Stack = createNativeStackNavigator();
+import * as Linking from 'expo-linking'; // Import Linking for call functionality
 
 const { width, height } = Dimensions.get('window');
 const isSmallDevice = width < 375;
 
-const ResponseProgress = ({navigation}) => {
+const ResponseProgress = ({ navigation }) => {
   const [progress, setProgress] = useState(0);
   const animatedValue = new Animated.Value(0);
 
@@ -29,11 +28,27 @@ const ResponseProgress = ({navigation}) => {
 
     return () => clearInterval(interval);
   }, [progress]);
-  const strokeDasharray = 283; 
+
+  const strokeDasharray = 283;
   const strokeDashoffset = animatedValue.interpolate({
     inputRange: [0, 100],
     outputRange: [strokeDasharray, 0],
   });
+
+  const makeCall = () => {
+    const phoneNumber = '09369452215'; // The number you want to prefill in the dial pad
+    const url = `tel:${phoneNumber}`;
+
+    Linking.canOpenURL(url)
+      .then((supported) => {
+        if (!supported) {
+          Alert.alert('Error', 'This device does not support phone calls');
+        } else {
+          return Linking.openURL(url);
+        }
+      })
+      .catch((err) => Alert.alert('Error', err.message));
+  };
 
   return (
     <View style={styles.container}>
@@ -69,17 +84,19 @@ const ResponseProgress = ({navigation}) => {
       </View>
 
       <View style={styles.floatingButtonContainer}>
-        <TouchableOpacity style={styles.floatingButton} onPress={() => navigation.navigate('message')}>
+        {/* Button to open the message screen */}
+        <TouchableOpacity style={styles.floatingButton} onPress={() => navigation.navigate('Message')}>
           <FontAwesome name="comment" size={isSmallDevice ? 24 : 30} color="#FFF" />
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.floatingButton}>
+        {/* Button to trigger the call */}
+        <TouchableOpacity style={styles.floatingButton} onPress={makeCall}>
           <FontAwesome name="phone" size={isSmallDevice ? 24 : 30} color="#FFF" />
         </TouchableOpacity>
       </View>
     </View>
   );
-}
+};
 
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 
@@ -159,11 +176,12 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     justifyContent: 'center',
     alignItems: 'center',
-    elevation: 5, 
-    shadowColor: '#000', 
+    elevation: 5,
+    shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.2,
     shadowRadius: 2,
   },
 });
+
 export default ResponseProgress;

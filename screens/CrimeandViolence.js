@@ -37,10 +37,10 @@ const CrimeandViolence = ({ navigation, route }) => {
         </View>
 
         <View style={styles.firstaid}>
-          <Text style={styles.firstaidText}>First Aid</Text>
-          <Text style={styles.firstaidPro}>1. Check for safe space to evacuate</Text>
-          <Text style={styles.firstaidPro}>2. Cover your nose with a damp piece of fabric to avoid suffocation</Text>
-          <Text style={styles.firstaidPro}>3. Stay low</Text>
+          <Text style={styles.firstaidText}>Safety Measures</Text>
+          <Text style={styles.firstaidPro}>1. Stay Calm and Assess the Situation</Text>
+          <Text style={styles.firstaidPro}>2. Remove Yourself from Danger</Text>
+          <Text style={styles.firstaidPro}>3. Avoid Drawing Attention</Text>
           <Text style={styles.firstaidPro}>4. DO NOT PANIC!</Text>
         </View>
 
@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
   actionsContainer: {
     backgroundColor: '#8B0000', 
     width: '112%',
-    height: '59%',
+    height: '60%',
     borderTopLeftRadius: 60,
     borderTopRightRadius: 60,
     padding: 20,

@@ -22,7 +22,7 @@ import BiologicalHazard from './screens/BiologicalHazard.js';
 import EmergencyCamera from './screens/EmergencyCamera.js';
 import ResponseProgress from './screens/Progress.js';
 import Message from './screens/Messages.js';
-
+//import Call from './screens/Call.js';
 
 
 const Stack = createNativeStackNavigator();
@@ -150,10 +150,15 @@ export default function App() {
         options = {{headerShown :false}}
         />
         <Stack.Screen
-        name = "message"
+        name = "Message"
         component={Message}
         options = {{headerShown :false}}
         />
+        {/* <Stack.Screen
+        name = "Call"
+        component={Call}
+        options = {{headerShown :false}}
+        /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

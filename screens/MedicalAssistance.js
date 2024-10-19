@@ -33,7 +33,7 @@ const MedicalAssistance = ({ navigation, route }) => {
       <View style={styles.container}>
         <View style={styles.header}>
           <Image source={require('../assets/maroonmedical.png')} style={styles.image} />
-          <Text style={styles.text}>FIRE EMERGENCY</Text>
+          <Text style={styles.text}>MEDICAL ASSISTANCE</Text>
         </View>
 
         <View style={styles.firstaid}>

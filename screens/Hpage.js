@@ -245,7 +245,7 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
     height: '100%',
-    width: '50%',
+    width: '60%',
     backgroundColor: '#800000',
     paddingVertical: 20,
     paddingHorizontal: 10,
@@ -340,7 +340,7 @@ const styles = StyleSheet.create({
   },
   upperScrollContent: {
     paddingTop: height * 0.03,
-    paddingLeft: width * 0.09,
+    paddingLeft: width * 0.2,
     paddingRight: width * 0.1,
   },
   infoCard: {
